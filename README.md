@@ -14,7 +14,7 @@ There are two possible options, [conda](https://docs.conda.io/projects/conda/en/
 
 Then, find below a minimal set of instructions to make them work for our hands-on:
 
-|  How to...   |      conda      |  virtualenv  |
+| How to... | conda | virtualenv |
 |----------|-------------|------|
 | Create it |  ```conda create --name env_cobrawap python=3.9``` | ```python3 -m venv env_cobrawap``` |
 | Activate it | ```conda activate env_cobrawap``` | ```source env_cobrawap/bin/activate``` |
