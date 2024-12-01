@@ -40,7 +40,6 @@ Once the installation process through pypi has finished, it is then possible to 
 cobrawap init
 ```
 and fill the requested fields with the desired paths for Cobrawap output and configuration files. At the same time, also the root of Cobrawap source code will be pointed at, and a list of Cobrawap stages will be created (refer to the [docs](https://cobrawap.readthedocs.io/en/latest/pipeline_stages.html) for more details). All these info will be collected and made further customizable at the path `~/.cobrawap/config`.
-```
 
 ## Cobrawap configuration & run on an test imaging dataset
 
