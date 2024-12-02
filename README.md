@@ -29,11 +29,6 @@ After having activated the virtual environment, it is possible to check its func
 pip list
 ```
 
-One final step here. Due to a recent update of the `PulP` package being in conflict with `snakemake`, the former package has to be pinned to an older version. To this aim, let's type the command:
-```
-pip install pulp==2.6.0
-```
-
 ### Installing the latest official release
 
 In order to install the latest official release of Cobrawap, let's activate the virtual environment created above and then run the following command:
@@ -41,6 +36,11 @@ In order to install the latest official release of Cobrawap, let's activate the 
 pip install cobrawap
 ```
 which will take care of fetching all the correct dependencies.
+
+In fact, due to a recent update of the `PulP` package being in conflict with `snakemake`, the former package has to be pinned to an older version. To this aim, let's then type the command:
+```
+pip install pulp==2.6.0
+```
 
 ### Initial configuration
 
