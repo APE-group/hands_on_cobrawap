@@ -22,9 +22,9 @@ USE_LINK_AS_STAGE_OUTPUT: True
 # To set as key-value pairs
 # Name_of_dataset: /path/to/data/files/
 DATA_SETS:
-    LENS_GCMaP6f_mouse2_t3: "~/hands_on_cobrawap/test_datasets/imaging_deep_anesthesia/data"
+    imaging_deep_anesthesia: "/path/to/WK_DIR/hands_on_cobrawap/test_datasets/imaging_deep_anesthesia/data"
 
-CURATION_SCRIPT: "~/hands_on_cobrawap/test_datasets/imaging_deep_anesthesia/profiles/stage01_data_entry/curation_script.py"
+CURATION_SCRIPT: "/path/to/WK_DIR/hands_on_cobrawap/test_datasets/imaging_deep_anesthesia/profiles/stage01_data_entry/curation_script.py"
 
 # pixel size
 SPATIAL_SCALE: 0.05  # mm
