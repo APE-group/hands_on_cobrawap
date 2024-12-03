@@ -8,7 +8,7 @@ STAGE_NAME: "stage02_processing"
 PROFILE: "imaging_deep_anesthesia"
 
 # Name of the output file
-STAGE_OUTPUT: "processed_data.nix"
+STAGE_OUTPUT: "processed_data"
 
 # File format in which all intermediate neo objects are stored
 NEO_FORMAT: "nix"
