@@ -1,13 +1,12 @@
 # A short tutorial for Cobrawap hands-on sessions
 
-.. image:: https://raw.githubusercontent.com/APE-group/hands_on_cobrawap/master/doc/images/cobrawap_logo.png
-   :height: 150px
-   :alt: Cobrawap Logo
-   :align: left
+<img src="https://github.com/APE-group/hands_on_cobrawap/blob/main/doc/images/cobrawap_logo.png" align="left" width="200px">
 
 Cobrawap (Collaborative Brain Wave Analysis Pipeline) is an adaptable and reusable analysis pipeline for the multi-scale, multi-methodology analysis of cortical wave activity. The pipeline ingests data from heterogeneous sources of spatially organized neuronal activity, such as ECoG or calcium imaging recordings, as well as the outcome of numerical simulations. The pipeline returns statistical measures to quantify the dynamic wave-like activity patterns found in the data.
 
 The open-source software for Cobrawap official releases is available [here](https://github.com/NeuralEnsemble/cobrawap), and fully documented [here](https://cobrawap.readthedocs.io).
+
+<br/>
 
 ## Cobrawap installation
 
