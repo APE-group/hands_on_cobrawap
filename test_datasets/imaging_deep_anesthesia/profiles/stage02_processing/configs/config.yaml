@@ -29,9 +29,9 @@ PLOT_FORMAT: "png"
 # and in which order. Execution order is from first to last entry.
 # The available blocks are:
 # "background_subtraction", "frequency_filter", "normalization", "detrending",
-# "roi_selection", "logMUA_estimation", "phase_transform", "z_score", "spatial_downsampling"
+# "roi_selection", "logMUA_estimation", "phase_transform", "zscore", "spatial_downsampling"
 BLOCK_ORDER: ["roi_selection", "background_subtraction", "detrending",
-              "frequency_filter", "z_score"]
+              "frequency_filter", "zscore"]
 
 # To make sure that the processing blocks are always executed in the correct
 # order that results from previous runs don't confound the workflow, all blocks
