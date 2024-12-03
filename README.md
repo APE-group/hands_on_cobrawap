@@ -41,21 +41,14 @@ pip install cobrawap
 ```
 which will take care of fetching all the correct dependencies.
 
-In fact, due to a recent update of the `PulP` package being in conflict with `snakemake`, the former package has to be pinned to an older version. To this aim, let's then type the command:
+In fact, due to a recent update of the `PulP` package being in conflict with `snakemake` dependecy for v0.2.0 of Cobrawap, the former package has to be pinned to an older version. To this aim, let's then type the command:
 ```
-pip install pulp==2.6.0
+pip install pulp==2.7.0
 ```
 
 ### Initial configuration
 
-Once the installation process through pypi has finished, it is then possible to configure its global settings. To this aim, one should launch the command:
-```
-cobrawap init --config_path <CONFIG_PATH> --output_path <OUTPUT_PATH>
-```
-by specifying the requested fields with the desired paths for Cobrawap output and configuration files. At the same time, also the root of Cobrawap source code will be pointed at, and a list of Cobrawap stages will be created (refer to the [docs](https://cobrawap.readthedocs.io/en/latest/pipeline_stages.html) for more details). All these info will be collected and made further customizable at the path `~/.cobrawap/config`; it's possible to show them by invoking the command
-```
-cobrawap settings
-```
+Once the installation process through pypi has finished, it is then possible to configure its global settings. To this aim, one should launch the `cobrawap init` command by specifying the requested fields with the desired paths for Cobrawap output and configuration files. At the same time, also the root of Cobrawap source code will be pointed at, and a list of Cobrawap stages will be created (refer to the [docs](https://cobrawap.readthedocs.io/en/latest/pipeline_stages.html) for more details). All these info will be collected and made further customizable at the path `~/.cobrawap/config`; it's possible to show them by invoking the `cobrawap settings` command.
 
 For our hands-on, it's not necessary to launche the `cobrawap init` command at this point; at variance, let's first retrieve the test datasets, and then let's fully configure Cobrawap for the chosen use-case.
 
@@ -63,7 +56,9 @@ For our hands-on, it's not necessary to launche the `cobrawap init` command at t
 
 Indeed, the fine-level configuration of Cobrawap clearly depends on the actual dataset to be analyzed (e.g. coming from imaging or ECoG experiments), as well as on the kind of analysis to perform. The modular structure of Cobrawap allows for a very deep customization of the processing, starting from the preliminar but necessary step of *data curation* (implemented in a dedicated *curation* block in the *data_entry* stage) and then going through the whole pipeline. For this reason, along with each test dataset present in this repository, also an analysis *profile* (i.e. a dedicated *curation_script* and a set of *configuration files*) is provided.
 
-In order to donwload the test datasets and their related analysis profiles, let's put ourselves into the chosen working directory `WK_DIR` and then type the command:
+### Cloning this repository
+
+In order to download the test datasets and their related analysis profiles, let's put ourselves into the chosen working directory `WK_DIR` and then type the command:
 ```
 git clone https://github.com/APE-group/hands_on_cobrawap.git
 ```
@@ -71,20 +66,20 @@ which will download the whole content of this repository, storing it under the `
 
 ### Configuration
 
-Let's now choose a certain test dataset among those here available, calling it TEST_DATASET from now on.
+Let's now choose a certain test dataset among those here available, calling it CHOSEN_DATASET from now on.
 
-In order to configure the pipeline for running on the chosen dataset with the related analysis profile, we have to modify the accordingly the `~/.cobrawap/config` settings file, acting on the two fields `config_path` and `output_path`, respectively referring to the root folder of the set of configuration files, and of the output of the analysis.
+In order to configure the pipeline for running on the chosen dataset with the related analysis profile, we have to properly set the two fields `config_path` and `output_path` in the `~/.cobrawap/config` settings file, respectively referring to the root folder of the set of configuration files, and of the output of the analysis.
 
 To this aim, we can now invoke the initialization command:
 ```
 cobrawap init --config_path <CONFIG_PATH> --output_path <OUTPUT_PATH>
 ```
 
-`CONFIG_PATH` has to point at the chosen dataset, e.g. `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles`, while a suggested choice for `OUTPUT_PATH` is `/path/to/WK_DIR/output`.
+where `CONFIG_PATH` has to point at the chosen dataset, e.g. `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles`, while a suggested choice for `OUTPUT_PATH` is `/path/to/WK_DIR/output`. If the `~/.cobrawap/config` file already exists, paths in the settings file can be overwritten only after the explicit consensus of the user.
 
-By default, Cobrawap will try to build the tree structure of folders containing the templates for the necessary configuration files. In our case, we already provided the suitable configuration files related to the chosen dataset, and pointed at it in the inizialization command. Hence, Cobrawap will throw a prompt, `The config directory /path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles already exists and is not empty. Create template config files anyway? [y/N]`, and we have to type `N` in order to use the provided configuration files.
+By default, at the end of the initialization step, Cobrawap will try to build the tree structure of folders containing the templates for the necessary configuration files. In our case, we already provided the suitable configuration files related to the chosen dataset, and pointed at it in the inizialization command. Hence, Cobrawap will throw a prompt, `The config directory /path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles already exists and is not empty. Create template config files anyway? [y/N]`, and we have to type `N` in order to use the provided configuration files.
 
-To end the configuration, let's open the configuration file of stage01, and change the `/path/to/WK_DIR` placeholder into the actual absolute path to `WK_DIR`.
+To end the configuration, let's open the configuration file of stage01, `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles/stage01_data_entry/configs/config.yaml`, and change the `/path/to/WK_DIR` placeholder into the actual absolute path to `WK_DIR`.
 
 ## Run Cobrawap on a specific dataset
 
