@@ -6,7 +6,7 @@ The open-source software for Cobrawap official releases is available [here](http
 
 ## Cobrawap installation
 
-From now on, we will refer to a root working directory, say `WK_DIR`, and all the paths will then contain in their first part the absolute path to it, say `/path/to/WK_DIR/`. Every user has then to replace it with the actual absolute path to `WK_DIR` on its laptop/platform.
+From now on, we will refer to a root working directory, say `WK_DIR`, and all the paths will then contain in their first part the absolute path to it, say `/path/to/WK_DIR/`. Every user has then to replace it with the actual absolute path to `WK_DIR` on his/her laptop/platform.
 
 ### Creating a virtual environment for Cobrawap
 
@@ -76,11 +76,11 @@ To this aim, we can now invoke the initialization command:
 cobrawap init --config_path <CONFIG_PATH> --output_path <OUTPUT_PATH>
 ```
 
-The `CONFIG_PATH` has to point at the chosen dataset, e.g. `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles`, while a suggested choice for the `OUTPUT_PATH` is `/path/to/WK_DIR/output`.
+`CONFIG_PATH` has to point at the chosen dataset, e.g. `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles`, while a suggested choice for `OUTPUT_PATH` is `/path/to/WK_DIR/output`.
 
 By default, Cobrawap will try to build the tree structure of folders containing the templates for the necessary configuration files. In our case, we already provided the suitable configuration files related to the chosen dataset, and pointed at it in the inizialization command. Hence, Cobrawap will throw a prompt, `The config directory /path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles already exists and is not empty. Create template config files anyway? [y/N]`, and we have to type `N` in order to use the provided configuration files.
 
-TBD: curation file, data set location, ...
+To end the configuration, let's open the configuration file of stage01, and change the `/path/to/WK_DIR` placeholder into the actual absolute path to `WK_DIR`.
 
 ## Run Cobrawap on a specific dataset
 
