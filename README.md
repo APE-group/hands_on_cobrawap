@@ -104,3 +104,12 @@ The related command to execute stage02 is:
 ```
 cobrawap run_stage --stage 2 --profile imaging_deep_anesthesia
 ```
+
+### Run stage 03
+
+After data curation and processing, in stage03 Cobrawap focuses on the detection of timestamps marking an increased activity in the channel, e.g. a transition from a down state to an up state. In the framework of cortical slow waves, where Cobrawap has been initially designed and developed, that would represent a potential activation due to the passage of a slow wave. The so-called *trigger detection* can be performed via different algorithms, and once again further implementations can be easily contributed by the user. The final result is a a collection of timestamps for each channel, still analyzed independently one from another.
+
+The related command to execute stage03 is:
+```
+cobrawap run_stage --stage 3 --profile imaging_deep_anesthesia
+```
