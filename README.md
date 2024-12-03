@@ -79,7 +79,7 @@ where `CONFIG_PATH` has to point at the chosen dataset, e.g. `/path/to/WK_DIR/ha
 
 By default, at the end of the initialization step, Cobrawap will try to build the tree structure of folders containing the templates for the necessary configuration files. In our case, we already provided the suitable configuration files related to the chosen dataset, and pointed at it in the inizialization command. Hence, Cobrawap will throw a prompt, `The config directory /path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles already exists and is not empty. Create template config files anyway? [y/N]`, and we have to type `N` in order to use the provided configuration files.
 
-To end the configuration, let's open the configuration file of stage01, `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles/stage01_data_entry/configs/config.yaml`, and change the `/path/to/WK_DIR` placeholder into the actual absolute path to `WK_DIR`.
+To end the configuration, let's open the configuration file of stage01, `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles/stage01_data_entry/configs/config.yaml`, and change the `/path/to/WK_DIR` placeholder into the actual absolute path to `WK_DIR` for the user-defined parameter `DATA_SETS` where input data is specified. 
 
 ## Run Cobrawap on a specific dataset
 
