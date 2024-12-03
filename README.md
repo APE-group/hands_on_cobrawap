@@ -84,4 +84,24 @@ To end the configuration, let's open the configuration file of stage01, and chan
 
 ## Run Cobrawap on a specific dataset
 
-TBD: run, run_stage & run_block
+Cobrawap can be launched as a whole pipeline, at the single stage level, or even at the elementary block level, thanks to the [versatile commands](https://cobrawap.readthedocs.io/en/latest/command_line_interface.html) provided by its CLI, respectively `cobrawap run`, `cobrawap run_stage` and `cobrawap run_block`.
+
+For this hands-on session, it is useful to focus on the intermediate behaviour of running single stages of Cobrawap.
+
+### Run stage 01
+
+Cobrawap first stage is devoted to data curation, i.e. annotation and formatting into the standard `neo` format used through the whole pipeline. The core of this stage is basically represented by the execution of the curation script shipped along with the dataset (typically, it is developed by the data providers, and with their close collaboration). At the end of the curation, time traces for some channels are provided as plots.
+
+The related command to execute stage01 is:
+```
+cobrawap run_stage --stage 1 --profile imaging_deep_anesthesia
+```
+
+### Run stage 02
+
+Then, the actual processing of data, dealing with each channel independently from the others, takes place in stage02. Among the many possible elementary processing operations that can be applied, one can find the detrending, the frequency filter, the z-score normalization, and so on... Again, at the end of the stage, a comparison of original and processed time traces for some channels is provided, together with plots specific to the processing blocks chosen by the user.
+
+The related command to execute stage02 is:
+```
+cobrawap run_stage --stage 2 --profile imaging_deep_anesthesia
+```
