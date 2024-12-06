@@ -79,7 +79,7 @@ where `CONFIG_PATH` has to point at the chosen dataset, e.g. `/path/to/WK_DIR/ha
 
 By default, at the end of the initialization step, Cobrawap will try to build the tree structure of folders containing the templates for the necessary configuration files. In our case, we already provided the suitable configuration files related to the chosen dataset, and pointed at it in the inizialization command. Hence, Cobrawap will throw a prompt, `The config directory /path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles already exists and is not empty. Create template config files anyway? [y/N]`, and we have to type `N` in order to use the provided configuration files.
 
-To end the configuration, let's open the configuration file of stage01, `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles/stage01_data_entry/configs/config.yaml`, and change the `/path/to/WK_DIR` placeholder into the actual absolute path to `WK_DIR` for the user-defined parameter `DATA_SETS` where input data is specified. 
+To end the configuration, let's open the configuration file of stage01, `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles/stage01_data_entry/configs/config.yaml`, and change the `/path/to/WK_DIR` placeholder into the actual absolute path to `WK_DIR` for the user-defined parameter `DATA_SETS` where input data is specified.
 
 ## Run Cobrawap on a specific dataset
 
@@ -107,9 +107,28 @@ cobrawap run_stage --stage 2 --profile imaging_deep_anesthesia
 
 ### Run stage 03
 
-After data curation and processing, in stage03 Cobrawap focuses on the detection of timestamps marking an increased activity in the channel, e.g. a transition from a down state to an up state. In the framework of cortical slow waves, where Cobrawap has been initially designed and developed, that would represent a potential activation due to the passage of a slow wave. The so-called *trigger detection* can be performed via different algorithms, and once again further implementations can be easily contributed by the user. The final result is a a collection of timestamps for each channel, still analyzed independently one from another.
+After data curation and processing, in stage03 Cobrawap focuses on the detection of timestamps marking an increased activity in the channel, e.g. a transition from a down state to an up state. In the framework of cortical slow waves, where Cobrawap has been initially designed and developed, that would represent a potential activation due to the passage of a slow wave. The so-called *trigger detection* can be performed via different algorithms, and once again further implementations can be easily contributed by the user. The final result is a collection of timestamps for each channel, still analyzed independently from one another.
 
 The related command to execute stage03 is:
 ```
 cobrawap run_stage --stage 3 --profile imaging_deep_anesthesia
+```
+
+### Run stage 04
+
+In this stage, timestamps recognized independently channel by channel are now clustered together, relying on the spatial arrangement of channels. Also in this case, the resulting waves of propagation can be classified according to different algorithms, allowing for a remarkable customizability.
+The final result is here a collection of waves, to be then quantitatively analyzed in the next stage.
+
+The related command to execute stage04 is:
+```
+cobrawap run_stage --stage 4 --profile imaging_deep_anesthesia
+```
+
+### Run stage 05
+
+Finally, the set of detected waves can be quantitatively analyzed, so to extract the interesting metrics. This can be done at the channel level, or collectively at the wave level; to this aim, two different versions of this stage are offered, `5` and `5b`. We will use the latter, for this use-case.
+
+The related command to execute stage05 is:
+```
+cobrawap run_stage --stage 5b --profile imaging_deep_anesthesia
 ```
