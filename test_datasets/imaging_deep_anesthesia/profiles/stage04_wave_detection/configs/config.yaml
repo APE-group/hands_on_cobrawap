@@ -24,7 +24,7 @@ PLOT_TSTOP: 10  # in s
 PLOT_CHANNELS: [2008, 1559, 4653]   # int or None. default "None" -> randomly selected
 PLOT_FORMAT: "png"
 
-# DETECTIION BLOCK
+# DETECTION BLOCK
 ##################
 # Available Blocks: "trigger_clustering"
 DETECTION_BLOCK: "trigger_clustering"
