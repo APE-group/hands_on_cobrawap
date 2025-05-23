@@ -16,17 +16,26 @@ From now on, we will refer to a root working directory, say `WK_DIR`, and all th
 
 First of all, it's necessary to have a working recent release of [python3](https://www.python.org/download/releases/3.0/), necessary for creating a virtual environment in which Cobrawap software and all its dependencies will be installed, without causing interferences with other python packages.
 
-There are two possible options, [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) and [virtualenv](https://docs.python.org/3/library/venv.html). Be sure to have one of them installed and properly working.
+The easiest option is through [virtualenv](https://docs.python.org/3/library/venv.html). There is also the [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) option, but it's less straightforward and has been advised against by our Institutions, being a commercial solution.
 
-Then, find below a minimal set of instructions to make them work for our hands-on:
+Find below a minimal set of instructions to make `venv` work for our hands-on:
 
-| How to... | conda | virtualenv |
-|----------|-------------|------|
-| Create it |  ```conda create --name env_cobrawap python=3.9``` | ```python3 -m venv env_cobrawap``` |
-| Activate it | ```conda activate env_cobrawap``` | ```source env_cobrawap/bin/activate``` |
-| Deactivate it | ```conda deactivate``` | ```deactivate``` |
+:pushpin: How to create it:
+```
+python3 -m venv env_cobrawap
+```
 
-Notice that, in the case of virtualenv, in `WK_DIR` will be created a folder with the same name as the environment just created, i.e. `env_cobrawap` in our case. At variance, conda will not create further folders in `WK_DIR`.
+:pushpin: How to activate it:
+```
+source env_cobrawap/bin/activate
+```
+
+:pushpin: How to deactivate it:
+```
+deactivate
+```
+
+Notice that virtualenv creates in `WK_DIR` a folder with the same name as the environment just created, i.e. `env_cobrawap` in our case.
 
 After having activated the virtual environment, it is possible to check its functionality by typing a simple command, as e.g.
 ```
