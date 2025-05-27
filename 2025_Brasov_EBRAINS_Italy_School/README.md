@@ -16,7 +16,7 @@ From now on, we will refer to a root working directory, say `WK_DIR`, and all th
 
 First of all, it's necessary to have a working recent release of [python3](https://www.python.org/download/releases/3.0/), necessary for creating a virtual environment in which Cobrawap software and all its dependencies will be installed, without causing interferences with other python packages.
 
-The easiest option is through [virtualenv](https://docs.python.org/3/library/venv.html). There is also the [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) option, but it's less straightforward and has been advised against by our Institutions, being a commercial solution.
+The easiest option is through [virtualenv](https://docs.python.org/3/library/venv.html). There is also the [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) option, but it's less straightforward and has been deprecated by our Institutions, being a commercial solution.
 
 Find below a minimal set of instructions to make `venv` work for our hands-on:
 
@@ -44,20 +44,24 @@ pip list
 
 ### Installing the latest official release
 
-In order to install the latest official release of Cobrawap, let's activate the virtual environment created above and then run the following command:
+In order to install the latest official release of Cobrawap, let's activate the (empty) virtual environment created above and then run the following command:
 ```
-pip install cobrawap
+git clone https://github.com/APE-group/cobrawap.git
 ```
-which will take care of fetching all the correct dependencies.
+which will clone the GitHub repository of Cobrawap, and then let's switch to the branch `enh/Hippo` containing the latest developments for this tutorial:
+```
+git checkout enh/Hippo
+```
 
-In fact, due to a recent update of the `PulP` package being in conflict with `snakemake` dependecy for v0.2.0 of Cobrawap, the former package has to be pinned to an older version. To this aim, let's then type the command:
+Finally, in order to take care of all the dependencies and to install Cobrawap CLI commands, let's proceed with the installation by running the following command in the root directory of the GitHub project just cloned:
 ```
-pip install pulp==2.7.0
+pip install -e .
 ```
+At variance with the standard package installation from pypi, this approach allows to leverage the latest features of Cobrawap even though they have not yet been released officially as a package.
 
 ### Initial configuration
 
-Once the installation process through pypi has finished, it is then possible to configure its global settings. To this aim, one should launch the `cobrawap init` command by specifying the requested fields with the desired paths for Cobrawap output and configuration files. At the same time, also the root of Cobrawap source code will be pointed at, and a list of Cobrawap stages will be created (refer to the [docs](https://cobrawap.readthedocs.io/en/latest/pipeline_stages.html) for more details). All these info will be collected and made further customizable at the path `~/.cobrawap/config`; it's possible to show them by invoking the `cobrawap settings` command.
+Once the installation process has finished, it is then possible to configure its global settings. To this aim, one should launch the `cobrawap init` command by specifying the requested fields with the desired paths for Cobrawap output and configuration files. At the same time, also the root of Cobrawap source code will be pointed at, and a list of Cobrawap stages will be created (refer to the [docs](https://cobrawap.readthedocs.io/en/latest/pipeline_stages.html) for more details). All these info will be collected and made further customizable at the path `~/.cobrawap/config`; it's possible to show them by invoking the `cobrawap settings` command.
 
 For our hands-on, it's not necessary to launche the `cobrawap init` command at this point; at variance, let's first retrieve the test datasets, and then let's fully configure Cobrawap for the chosen use-case.
 
