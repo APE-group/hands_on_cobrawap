@@ -1,4 +1,4 @@
-# A short tutorial for Cobrawap hands-on sessions
+# "2025_Brasov_EBRAINS_Italy_School" hands-on of Cobrawap
 
 <img src="https://github.com/APE-group/hands_on_cobrawap/blob/main/doc/images/cobrawap_logo.png" align="left" width="200px">
 
