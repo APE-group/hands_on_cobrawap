@@ -1,4 +1,4 @@
-# A short tutorial for Cobrawap hands-on sessions
+# "2024_Napoli_EBRAINS_Italy_Plenary" hands-on of Cobrawap
 
 <img src="https://github.com/APE-group/hands_on_cobrawap/blob/main/doc/images/cobrawap_logo.png" align="left" width="200px">
 
