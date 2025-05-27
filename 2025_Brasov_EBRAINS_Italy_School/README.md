@@ -67,7 +67,7 @@ For our hands-on, it's not necessary to launche the `cobrawap init` command at t
 
 ## Configuring Cobrawap on a specific dataset
 
-Indeed, the fine-level configuration of Cobrawap clearly depends on the actual dataset to be analyzed (e.g. coming from imaging or ECoG experiments), as well as on the kind of analysis to perform. The modular structure of Cobrawap allows for a very deep customization of the processing, starting from the preliminar but necessary step of *data curation* (implemented in a dedicated *curation* block in the *data_entry* stage) and then going through the whole pipeline. For this reason, along with each test dataset present in this repository, also an analysis *profile* (i.e. a dedicated *curation_script* and a set of *configuration files*) is provided.
+Indeed, the fine-level configuration of Cobrawap clearly depends on the actual dataset to be analyzed (e.g. coming from imaging or ECoG experiments, or from spiking simulations), as well as on the kind of analysis to perform. The modular structure of Cobrawap allows for a very deep customization of the processing, starting from the preliminar but necessary step of *data curation* (implemented in a dedicated *curation* block in the *data_entry* stage) and then going through the whole pipeline. For this reason, along with each test dataset present in this repository, also an analysis *profile* (i.e. a dedicated *curation_script* and a set of *configuration files*) is provided.
 
 ### Cloning this repository
 
@@ -106,7 +106,7 @@ Cobrawap first stage is devoted to data curation, i.e. annotation and formatting
 
 The related command to execute stage01 is:
 ```
-cobrawap run_stage --stage 1 --profile Hippo_Brasov
+cobrawap run_stage --stage 1 --profile spiking_hippocampus
 ```
 
 ### Run stage 02
@@ -115,7 +115,7 @@ Then, the actual processing of data, dealing with each channel independently fro
 
 The related command to execute stage02 is:
 ```
-cobrawap run_stage --stage 2 --profile Hippo_Brasov
+cobrawap run_stage --stage 2 --profile spiking_hippocampus
 ```
 
 ### Run stage 03
@@ -124,7 +124,7 @@ After data curation and processing, in stage03 Cobrawap focuses on the detection
 
 The related command to execute stage03 is:
 ```
-cobrawap run_stage --stage 3 --profile Hippo_Brasov
+cobrawap run_stage --stage 3 --profile spiking_hippocampus
 ```
 
 ### Run stage 04
@@ -134,7 +134,7 @@ The final result is here a collection of waves, to be then quantitatively analyz
 
 The related command to execute stage04 is:
 ```
-cobrawap run_stage --stage 4 --profile Hippo_Brasov
+cobrawap run_stage --stage 4 --profile spiking_hippocampus
 ```
 
 ### Run stage 05
@@ -143,5 +143,5 @@ Finally, the set of detected waves can be quantitatively analyzed, so to extract
 
 The related command to execute stage05 is:
 ```
-cobrawap run_stage --stage 5b --profile Hippo_Brasov
+cobrawap run_stage --stage 5b --profile spiking_hippocampus
 ```
