@@ -106,7 +106,7 @@ Cobrawap first stage is devoted to data curation, i.e. annotation and formatting
 
 The related command to execute stage01 is:
 ```
-cobrawap run_stage --stage 1 --profile imaging_deep_anesthesia
+cobrawap run_stage --stage 1 --profile Hippo_Brasov
 ```
 
 ### Run stage 02
@@ -115,7 +115,7 @@ Then, the actual processing of data, dealing with each channel independently fro
 
 The related command to execute stage02 is:
 ```
-cobrawap run_stage --stage 2 --profile imaging_deep_anesthesia
+cobrawap run_stage --stage 2 --profile Hippo_Brasov
 ```
 
 ### Run stage 03
@@ -124,7 +124,7 @@ After data curation and processing, in stage03 Cobrawap focuses on the detection
 
 The related command to execute stage03 is:
 ```
-cobrawap run_stage --stage 3 --profile imaging_deep_anesthesia
+cobrawap run_stage --stage 3 --profile Hippo_Brasov
 ```
 
 ### Run stage 04
@@ -134,7 +134,7 @@ The final result is here a collection of waves, to be then quantitatively analyz
 
 The related command to execute stage04 is:
 ```
-cobrawap run_stage --stage 4 --profile imaging_deep_anesthesia
+cobrawap run_stage --stage 4 --profile Hippo_Brasov
 ```
 
 ### Run stage 05
@@ -143,5 +143,5 @@ Finally, the set of detected waves can be quantitatively analyzed, so to extract
 
 The related command to execute stage05 is:
 ```
-cobrawap run_stage --stage 5b --profile imaging_deep_anesthesia
+cobrawap run_stage --stage 5b --profile Hippo_Brasov
 ```
