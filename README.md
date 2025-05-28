@@ -8,8 +8,8 @@ The open-source software for Cobrawap official releases is available [here](http
 
 <br/>
 
-The different folders in this tutoral repository refer to the different hands-on we have been delivering up to now:
-- *"2024_Napoli_EBRAINS_Italy_Plenary"*: The 2024 plenary [workshop](https://www.fuorirottaeventi.com/ebrains-napoli) of the EBRAINS-Italy project in Naples, Italy (also delivered at the 2025 EBRAINS [event](https://flagship.kip.uni-heidelberg.de/jss/HBPm?m=SgD&mI=268) *Accelerate Your Neouroscience Research with EBRAINS*, in Heidelberg, Germany);
+The different folders in this tutorial repository refer to the different hands-on we have been delivering up to now:
+- *"2024_Napoli_EBRAINS_Italy_Plenary"*: The 2024 plenary [workshop](https://www.fuorirottaeventi.com/ebrains-napoli) of the EBRAINS-Italy project in Naples, Italy (also delivered at the 2025 EBRAINS [event](https://flagship.kip.uni-heidelberg.de/jss/HBPm?m=SgD&mI=268) *Accelerate Your Neuroscience Research with EBRAINS*, in Heidelberg, Germany);
 - *"2025_Brasov_EBRAINS_Italy_School"*: The 2025 EBRAINS-Italy training simulation [workshop](https://conf.snn.ro/ebrains) in Brasov, Romania.
 
 In each event, we focused on a different use-case by using a different release of Cobrawap, possibly with features at that time still under development and hence not yet available through the standard package distribution. For detailed instructions about the installation, configuration and the hands-on itself, refer to the README file within each folder.
