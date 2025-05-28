@@ -21,7 +21,7 @@ USE_LINK_AS_STAGE_OUTPUT: True
 # To set as key-value pairs
 # Name_of_dataset: /path/to/data/files/
 DATA_SETS:
-    spiking_hippocampus: '/path/to/WK_DIR/hands_on_cobrawap/test_datasets/spiking_hippocampus/active_channels_100mm_10ms_traces.npy'
+    spiking_hippocampus: '/path/to/WK_DIR/hands_on_cobrawap/test_datasets/spiking_hippocampus/data/active_channels_100mm_10ms_traces.npy'
 
 CURATION_SCRIPT: '/path/to/WK_DIR/hands_on_cobrawap/test_datasets/spiking_hippocampus/profiles/stage01_data_entry/scripts/curate.py'
 
@@ -47,7 +47,7 @@ ANNOTATIONS:
 ARRAY_ANNOTATIONS:
     x_coords: 'None'
     y_coords: 'None'
-ARRAY_ANNOTATION_FILE: '/path/to/WK_DIR/hands_on_cobrawap/test_datasets/spiking_hippocampus/active_channels_100mm_10ms_coords.npy'
+ARRAY_ANNOTATION_FILE: '/path/to/WK_DIR/hands_on_cobrawap/test_datasets/spiking_hippocampus/data/active_channels_100mm_10ms_coords.npy'
 
 KWARGS: 'None'
 
