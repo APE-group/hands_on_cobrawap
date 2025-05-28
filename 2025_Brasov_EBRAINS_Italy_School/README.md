@@ -48,7 +48,11 @@ In order to install the latest official release of Cobrawap, let's activate the 
 ```
 git clone https://github.com/APE-group/cobrawap.git
 ```
-which will clone the GitHub repository of Cobrawap, and then let's switch to the branch `enh/Hippo` containing the latest developments for this tutorial:
+which will clone the GitHub repository of Cobrawap, and then let's enter the cobrawap directory:
+```
+cd cobrawap
+```
+and then switch to the branch `enh/Hippo` containing the latest developments for this tutorial:
 ```
 git checkout enh/Hippo
 ```
