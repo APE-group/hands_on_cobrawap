@@ -2,12 +2,5 @@
 
 ## The dataset
 
-This trial comes from the following dataset:
-
-- *Study of Slow Waves (SWs) propagation through wide-field calcium imaging of the right cortical hemisphere of GCaMP6f mice*
-
-by F. Resta, A. L. Allegra Mascaro and F. S. Pavone, publicly retrievable at [https://doi.org/10.25493/QFZK-FXS](https://doi.org/10.25493/QFZK-FXS).
-
-Here a short description:
-
-*Slow waves (SWs) are spatio-temporal patterns of cortical activity that occur both during natural sleep and anesthesia and are preserved across species. Even though electrophysiological recordings have been largely used to characterize brain states, they are limited in spatial resolution and cannot target specific neuronal populations. Recently, large-scale optical imaging techniques coupled with functional indicators overcame these restrictions and will give new important insight on the SW phenomenon. Here we combined wide-field fluorescence microscopy and a transgenic mouse model expressing a calcium indicator (GCaMP6f) in excitatory neurons to study and model SW propagation.*
+This trial is a teaching-purpose elaboration of a simulation of hippocampus spiking activity; original data are produced by CNR-IBF (and partners) in the framework of the EBRAINS-Italy PNRR project. Here, a simplified geometry is introduced, and data are represented as numpy arrays. Processing applied to original data include: 2D-projection, spatio-temporal downsampling, normalization; the sub-set of active nodes is considered. As a result, information is mapped on a 2D regular grid; the coordinates of the nodes in the down-sampled network are listed as well.
+Further details will follow. 
