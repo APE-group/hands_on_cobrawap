@@ -65,7 +65,7 @@ Finally, in order to take care of all the dependencies and to install Cobrawap C
 ```
 pip install -e .
 ```
-At variance with the standard package installation from pypi, this approach allows to leverage the latest features of Cobrawap even though they have not yet been released officially as a package.
+At variance with the standard package installation from pypi, this approach allows to leverage the latest features of Cobrawap even though they have not yet been released officially as a package. Notice that this command may not work with very old versions of `pip`, so be sure to have updated `pip` in first place, as suggested at the beginning.
 
 ### Initial configuration
 
