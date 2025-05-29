@@ -14,7 +14,7 @@ From now on, we will refer to a root working directory, say `WK_DIR`, and all th
 
 ### Creating a virtual environment for Cobrawap
 
-First of all, it's necessary to have a working recent release of [python3](https://www.python.org/download/releases/3.0/), necessary for creating a virtual environment in which Cobrawap software and all its dependencies will be installed, without causing interferences with other python packages.
+First of all, it's necessary to have a working recent release of [python3](https://www.python.org/download/releases/3.0/), **with version at least 3.8**, necessary for creating a virtual environment in which Cobrawap software and all its dependencies will be installed, without causing interferences with other python packages.
 
 The easiest option is through [virtualenv](https://docs.python.org/3/library/venv.html). There is also the [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) option, but it's less straightforward and has been deprecated by our Institutions, being a commercial solution.
 
@@ -37,7 +37,11 @@ deactivate
 
 Notice that virtualenv creates in `WK_DIR` a folder with the same name as the environment just created, i.e. `env_cobrawap` in our case.
 
-After having activated the virtual environment, it is possible to check its functionality by typing a simple command, as e.g.
+After having activated the virtual environment, it is suggested to update `pip`:
+```
+pip install --upgrade pip
+```
+and then check the environment functionality by typing a simple command, as by listing the installed packages:
 ```
 pip list
 ```
