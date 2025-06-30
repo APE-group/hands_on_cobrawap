@@ -10,7 +10,11 @@ The open-source software for Cobrawap official releases is available [here](http
 
 ## Cobrawap installation
 
-From now on, we will refer to a root working directory, say `WK_DIR`, and all the paths will then contain in their first part the absolute path to it, say `/path/to/WK_DIR/`. Every user has then to replace it with the actual absolute path to `WK_DIR` on his/her laptop/platform.
+From now on, we will refer to a root working directory, say `WK_DIR`, and all the paths will then contain in their first part the absolute path to it, say `/path/to/WK_DIR/`. Every user has then to replace it with the actual absolute path to `WK_DIR` on his/her laptop/platform. To this aim, it can be useful to store such path into an environment variable:
+
+```
+WK_DIR="/path/to/WK_DIR/"
+```
 
 ### Creating a virtual environment for Cobrawap
 
