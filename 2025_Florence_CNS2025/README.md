@@ -10,7 +10,7 @@ The open-source software for Cobrawap official releases is available [here](http
 
 ## Cobrawap installation
 
-From now on, we will refer to a root working directory, say `WK_DIR`, and all the paths will then contain in their first part the absolute path to it, say `/path/to/WK_DIR/`. Every user has then to replace it with the actual absolute path to `WK_DIR` on his/her laptop/platform. To this aim, it can be useful to store such path into an environment variable:
+From now on, we will refer to a root working directory, say `WK_DIR`, and all the paths will then contain in their first part the absolute path to it, say `/path/to/WK_DIR/`. Every user has then to replace it with the actual absolute path to `WK_DIR` on his/her laptop/platform. To this aim, it can be useful to store such path into an environment variable, and use afterwards:
 
 ```
 WK_DIR="/path/to/WK_DIR/"
@@ -138,14 +138,23 @@ Let's now choose a certain test dataset among those here available, calling it C
 
 In order to configure the pipeline for running on the chosen dataset with the related analysis profile, we have to properly set the two fields `config_path` and `output_path` in the `~/.cobrawap/config` settings file, respectively referring to the root folder of the set of configuration files, and of the output of the analysis.
 
-To this aim, we can now invoke the initialization command:
+To this aim, we can build the `CONFIG_PATH` environment variable, pointing at the chosen dataset configuration profile:
 ```
-cobrawap init --config_path <CONFIG_PATH> --output_path <OUTPUT_PATH>
+CONFIG_PATH=$WK_DIR"hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles"
+```
+and the `OUTPUT_PATH` environment variable, that can be something like:
+```
+OUTPUT_PATH=$WK_DIR"/output"
 ```
 
-where `CONFIG_PATH` has to point at the chosen dataset, e.g. `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles`, while a suggested choice for `OUTPUT_PATH` is `/path/to/WK_DIR/output`. If the `~/.cobrawap/config` file already exists, paths in the settings file can be overwritten only after the explicit consensus of the user.
+Finally, let's invoke the Cobrawap initialization command:
+```
+cobrawap init --config_path $CONFIG_PATH --output_path $OUTPUT_PATH
+```
 
-By default, at the end of the initialization step, Cobrawap will try to build the tree structure of folders containing the templates for the necessary configuration files. In our case, we already provided the suitable configuration files related to the chosen dataset, and pointed at it in the inizialization command. Hence, Cobrawap will throw a prompt, `The config directory /path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles already exists and is not empty. Create template config files anyway? [y/N]`, and we have to type `N` in order to use the provided configuration files.
+If the `~/.cobrawap/config` file already exists, paths in the settings file can be overwritten only after the explicit consensus of the user.
+
+:warning: By default, at the end of the initialization step, Cobrawap will try to build the tree structure of folders containing the templates for the necessary configuration files. In our case, we already provided the suitable configuration files related to the chosen dataset, and pointed at it in the inizialization command. Hence, Cobrawap will throw a prompt, `The config directory /path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles already exists and is not empty. Create template config files anyway? [y/N]`, and we have to type `N` in order to use the provided configuration files.
 
 To end the configuration, let's open the configuration file of stage01, `/path/to/WK_DIR/hands_on_cobrawap/test_datasets/<CHOSEN_DATASET>/profiles/stage01_data_entry/configs/config.yaml`, and change the `/path/to/WK_DIR` placeholder into the actual absolute path to `WK_DIR` for the user-defined parameter `DATA_SETS` where input data is specified. `/path/to/WK_DIR` must be replaced with the actual absolute path also for parameter `ARRAY_ANNOTATION_FILE`.
 
