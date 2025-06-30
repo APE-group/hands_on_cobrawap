@@ -93,15 +93,15 @@ pip list
 
 In order to install the latest official release of Cobrawap, let's activate the (empty) virtual environment created above and then run the following command:
 ```
-git clone git@github.com:NeuralEnsemble/cobrawap.git
+git clone https://github.com/APE-group/cobrawap.git
 ```
 which will clone the GitHub repository of Cobrawap, and then let's enter the cobrawap directory:
 ```
 cd cobrawap
 ```
-and then switch to the branch `enh/Hippo` containing the latest developments for this tutorial:
+and then switch to the branch `hands_on/CNS_2025` containing the latest developments for this tutorial:
 ```
-git checkout enh/Hippo
+git checkout hands_on/CNS_2025
 ```
 
 Finally, in order to take care of all the dependencies and to install Cobrawap CLI commands, let's proceed with the installation by running the following command in the root directory of the GitHub project just cloned:
