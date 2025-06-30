@@ -27,12 +27,12 @@ Find below the necessary steps for setting up a virtual environmente in both way
 
 :pushpin: How to create it:
 ```
-python3 -m venv env_cobrawap
+python3 -m venv env_cobrawap_cns
 ```
 
 :pushpin: How to activate it:
 ```
-source env_cobrawap/bin/activate
+source env_cobrawap_cns/bin/activate
 ```
 
 :pushpin: How to deactivate it:
@@ -40,16 +40,13 @@ source env_cobrawap/bin/activate
 deactivate
 ```
 
-Notice that virtualenv creates in `WK_DIR` a folder with the same name as the environment just created, i.e. `env_cobrawap` in our case.
+:pushpin: How to definitely remove it:
+```
+rm -r env_cobrawap_cns
+```
 
-After having activated the virtual environment, it is suggested to update `pip`:
-```
-pip install --upgrade pip
-```
-and then check the environment functionality by typing a simple command, as by listing the installed packages:
-```
-pip list
-```
+Notice that virtualenv creates in `WK_DIR` a folder with the same name as the environment just created, i.e. `env_cobrawap_cns` in our case. Indeed, if you want to get rid of your virtual environment, it is enough to delete such folder.
+
 </p>
 </details>
 
@@ -60,12 +57,12 @@ pip list
 
 :pushpin: How to create it:
 ```
-conda create --name env_cobrawap python=3.10
+conda create --name env_cobrawap_cns python=3.10
 ```
 
 :pushpin: How to activate it:
 ```
-conda activate env_cobrawap
+conda activate env_cobrawap_cns
 ```
 
 :pushpin: How to deactivate it:
@@ -73,16 +70,30 @@ conda activate env_cobrawap
 conda deactivate
 ```
 
+:pushpin: How to definitely remove it:
+```
+conda remove --name env_cobrawap_cns --all
+```
+
 In this case, all the dependencies of the new environment will now stored in the conda default location for virtual environments, unless otherwise specified. Check conda documentation for further details.
 
 </p>
 </details>
 
+After having activated the virtual environment, it is suggested to update `pip`:
+```
+pip install --upgrade pip
+```
+and then check the environment functionality by typing a simple command, as by listing the installed packages:
+```
+pip list
+```
+
 ### Installing the latest official release
 
 In order to install the latest official release of Cobrawap, let's activate the (empty) virtual environment created above and then run the following command:
 ```
-git clone https://github.com/APE-group/cobrawap.git
+git clone git@github.com:NeuralEnsemble/cobrawap.git
 ```
 which will clone the GitHub repository of Cobrawap, and then let's enter the cobrawap directory:
 ```
