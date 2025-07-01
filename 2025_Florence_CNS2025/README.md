@@ -164,7 +164,49 @@ Cobrawap can be launched as a whole pipeline, at the single stage level, or even
 
 For this hands-on session, it is useful to focus on the intermediate behaviour of running single stages of Cobrawap.
 
-### Run stage 01
+### Profile "imaging_deep_anesthesia"
+
+Let's start from the `imaging_deep_anesthesia` test dataset.
+
+Cobrawap first stage is devoted to data curation, i.e. annotation and formatting into the standard `neo` format used through the whole pipeline. The core of this stage is basically represented by the execution of the curation script shipped along with the dataset (typically, it is developed by the data providers, and with their close collaboration). At the end of the curation, time traces for some channels are provided as plots.
+
+The related command to execute stage01 is:
+```
+cobrawap run_stage --stage 1 --profile imaging_deep_anesthesia
+```
+
+Then, the actual processing of data, dealing with each channel independently from the others, takes place in stage02. Among the many possible elementary processing operations that can be applied, one can find the detrending, the frequency filter, the z-score normalization, and so on... Again, at the end of the stage, a comparison of original and processed time traces for some channels is provided, together with plots specific to the processing blocks chosen by the user.
+
+The related command to execute stage02 is:
+```
+cobrawap run_stage --stage 2 --profile imaging_deep_anesthesia
+```
+
+After data curation and processing, in stage03 Cobrawap focuses on the detection of timestamps marking an increased activity in the channel, e.g. a transition from a down state to an up state. In the framework of cortical slow waves, where Cobrawap has been initially designed and developed, that would represent a potential activation due to the passage of a slow wave. The so-called *trigger detection* can be performed via different algorithms, and once again further implementations can be easily contributed by the user. The final result is a collection of timestamps for each channel, still analyzed independently from one another.
+
+The related command to execute stage03 is:
+```
+cobrawap run_stage --stage 3 --profile imaging_deep_anesthesia
+```
+
+In this stage, timestamps recognized independently channel by channel are now clustered together, relying on the spatial arrangement of channels. Also in this case, the resulting waves of propagation can be classified according to different algorithms, allowing for a remarkable customizability.
+The final result is here a collection of waves, to be then quantitatively analyzed in the next stage.
+
+The related command to execute stage04 is:
+```
+cobrawap run_stage --stage 4 --profile imaging_deep_anesthesia
+```
+
+Finally, the set of detected waves can be quantitatively analyzed, so to extract the interesting metrics. This can be done at the channel level, or collectively at the wave level; to this aim, two different versions of this stage are offered, `5` and `5b`. We will use the latter, for this use-case.
+
+The related command to execute stage05 is:
+```
+cobrawap run_stage --stage 5b --profile imaging_deep_anesthesia
+```
+
+### Profile "spiking_hippocampus"
+
+Now, let's move to a different dataset, coming from a spiking simulation of a human hippocampus.
 
 Cobrawap first stage is devoted to data curation, i.e. annotation and formatting into the standard `neo` format used through the whole pipeline. The core of this stage is basically represented by the execution of the curation script shipped along with the dataset (typically, it is developed by the data providers, and with their close collaboration). At the end of the curation, time traces for some channels are provided as plots.
 
@@ -173,16 +215,12 @@ The related command to execute stage01 is:
 cobrawap run_stage --stage 1 --profile spiking_hippocampus
 ```
 
-### Run stage 02
-
 Then, the actual processing of data, dealing with each channel independently from the others, takes place in stage02. Among the many possible elementary processing operations that can be applied, one can find the detrending, the frequency filter, the z-score normalization, and so on... Again, at the end of the stage, a comparison of original and processed time traces for some channels is provided, together with plots specific to the processing blocks chosen by the user.
 
 The related command to execute stage02 is:
 ```
 cobrawap run_stage --stage 2 --profile spiking_hippocampus
 ```
-
-### Run stage 03
 
 After data curation and processing, in stage03 Cobrawap focuses on the detection of timestamps marking an increased activity in the channel, e.g. a transition from a down state to an up state. In the framework of cortical slow waves, where Cobrawap has been initially designed and developed, that would represent a potential activation due to the passage of a slow wave. The so-called *trigger detection* can be performed via different algorithms, and once again further implementations can be easily contributed by the user. The final result is a collection of timestamps for each channel, still analyzed independently from one another.
 
@@ -191,8 +229,6 @@ The related command to execute stage03 is:
 cobrawap run_stage --stage 3 --profile spiking_hippocampus
 ```
 
-### Run stage 04
-
 In this stage, timestamps recognized independently channel by channel are now clustered together, relying on the spatial arrangement of channels. Also in this case, the resulting waves of propagation can be classified according to different algorithms, allowing for a remarkable customizability.
 The final result is here a collection of waves, to be then quantitatively analyzed in the next stage.
 
@@ -200,8 +236,6 @@ The related command to execute stage04 is:
 ```
 cobrawap run_stage --stage 4 --profile spiking_hippocampus
 ```
-
-### Run stage 05
 
 Finally, the set of detected waves can be quantitatively analyzed, so to extract the interesting metrics. This can be done at the channel level, or collectively at the wave level; to this aim, two different versions of this stage are offered, `5` and `5b`. We will use the latter, for this use-case.
 
