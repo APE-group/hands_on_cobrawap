@@ -1,16 +1,17 @@
 # Config file for Stage 2 - Processing
 
 # Name of stage, must be identical with folder name
-STAGE_NAME: 'stage02_processing'
+STAGE_NAME: "stage02_processing"
 
-# The profile name is the key for this parameter configuration. Results are stored in output_path/<PROFILE>/ (output_path is defined in settings.py)
-PROFILE: 'spiking_hippocampus'
+# The profile name is the key for this parameter configuration.
+# Results are stored in output_path/<PROFILE>/ (output_path is defined in settings.py)
+PROFILE: "spiking_hippocampus"
 
 # Name of the output file
-STAGE_OUTPUT: 'processed_data'
+STAGE_OUTPUT: "processed_data"
 
 # File format in which all intermediate neo objects are stored
-NEO_FORMAT: 'nix'
+NEO_FORMAT: "nix"
 
 # If True (default), the output file of a stage is created as symbolic link
 # to the last block output. If False, a duplicate is created (e.g. for cloud
@@ -18,21 +19,22 @@ NEO_FORMAT: 'nix'
 USE_LINK_AS_STAGE_OUTPUT: False
 
 # Plotting parameters
-PLOT_TSTART: 'None'  # float (in s) or 'None'.
-PLOT_TSTOP: 'None'  # float (in s) or 'None'.
-PLOT_CHANNELS: [221]  #'None'  # int or None. default 'None' -> randomly selected
-PLOT_FORMAT: 'png'
+PLOT_TSTART: "None"  # float (in s) or "None".
+PLOT_TSTOP: "None"  # float (in s) or "None".
+# If "None" is selected, channels to be plotted are randomly picked
+PLOT_CHANNELS: [221]  # "None"  # int or None, default is "None"
+PLOT_FORMAT: "png"
 
 # The block order determines which processing steps (blocks) will be applied
 # and in which order. Execution order is from first to last entry.
 # The available blocks are (in alphabetical order):
-#     'background_subtraction', 'convolution', 'detrending', 'frequency_filter',
-#     'logMUA_estimation', 'normalization', 'phase_transform', 'roi_selection',
-#     'spatial_downsampling', 'subsampling', 'zscore'
+#     "background_subtraction", "convolution", "detrending", "frequency_filter",
+#     "logMUA_estimation", "normalization", "phase_transform", "roi_selection",
+#     "spatial_downsampling", "subsampling", "zscore"
 # Default: empty list [] -> it skips any processing blocks and returns the same
 # as input but, different from plot obtained from stage01, here the values on
 # the y-scale are correctly reported.
-BLOCK_ORDER: ['convolution']
+BLOCK_ORDER: ["convolution"]
 
 # BLOCK - background_subtraction
 #################################
@@ -44,10 +46,10 @@ MACRO_PIXEL_DIM: 2
 
 # BLOCK - hierarchical_spatial_sampling
 #################################
-# method to use for the exit mode: 'consecutive', 'voting', 'standard'
-EXIT_CONDITION: 'voting'
+# method to use for the exit mode: "consecutive", "voting", "standard"
+EXIT_CONDITION: "voting"
 # method to evaluate the signal to noise ration of a macro pixel
-SIGNAL_EVALUATION_METHOD: 'shapiro'
+SIGNAL_EVALUATION_METHOD: "shapiro"
 # number of bad nodes in the same branch to meet the exit condition
 N_BAD_NODES: 2
 # only for "voting" method: threshold fraction of
@@ -57,21 +59,21 @@ VOTING_THRESHOLD: 0.5
 # BLOCK - normalization
 #######################
 # Normalize the data (devide channels-wise) by either:
-# 'mean', 'median', 'max'
-NORMALIZE_BY: 'mean'
+# "mean", "median", "max"
+NORMALIZE_BY: "mean"
 
 # BLOCK - frequency_filter
 ##########################
 # parameters to be passed to the butterworth frequency filter
 # function by elephant
-HIGHPASS_FREQ: 0  # in Hz
-LOWPASS_FREQ: 150  # in Hz
+HIGHPASS_FREQUENCY: 0  # in Hz
+LOWPASS_FREQUENCY: 150  # in Hz
 FILTER_ORDER: 2
 # filter function used in scipy backend.
-# options: 'filtfilt', 'lfilter', 'sosfiltfilt'
-FILTER_FUNCTION: 'sosfiltfilt'
+# options: "filtfilt", "lfilter", "sosfiltfilt"
+FILTER_FUNCTION: "sosfiltfilt"
 # Plotting parameters for the power spectrum
-PSD_FREQ_RES: 5  # in Hz
+PSD_FREQUENCY_RESOLUTION: 5  # in Hz
 PSD_OVERLAP: 0.5
 
 # BLOCK - detrending
@@ -96,18 +98,18 @@ CROP_TO_SELECTION: False
 MUA_HIGHPASS_FREQUENCY: 50  # in Hz
 MUA_LOWPASS_FREQUENCY: 1200  # in Hz
 # Rate of the logMUA signal. Must be <= the original sampling rate
-# in Hz (default: 'None', takes highpass_freq)
+# in Hz (default: "None", takes highpass_freq)
 logMUA_RATE: 70
 # Length of time slice (in s) to estimate the local power spectrum
-# default 'None', takes minimum number of samples determined
+# default "None", takes minimum number of samples determined
 # by the lower bound of the frequency band
 FFT_SLICE: 0.1
 # PSD_OVERLAP: determined by setting in block frequency_filter
 
 # BLOCK - convolution
 ####################
-# Allowed types of kernels: ['gaussian','biexponential']
-KERNEL_TYPE: 'gaussian'
+# Allowed types of kernels: ["gaussian","biexponential"]
+KERNEL_TYPE: "gaussian"
 KERNEL_PARAMS:
     sampling_rate_Hz: 1000
     #tau_rise: 5
