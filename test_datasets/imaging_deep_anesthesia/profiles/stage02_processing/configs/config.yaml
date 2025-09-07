@@ -81,7 +81,7 @@ DETRENDING_ORDER: 1
 #####################
 TARGET_RATE: 200  # in Hz
 
-# BLOCK - img_roi_selection
+# BLOCK - roi_selection
 ###########################
 # Threshold below which the pixels are discarded (set to nan).
 # Given in percent of the range between minimum and maximum intensity.

@@ -80,19 +80,11 @@ PSD_OVERLAP: 0.5
 #             1 - mean and slope detrending (linear): this should be the default.
 DETRENDING_ORDER: 1
 
-# BLOCK - convolve
-####################
-KERNEL_TYPE: 'gaussian'
-KERNEL_PARAMS:
-    duration_ms: 84
-    sampling_rate_Hz: 100
-    std_dev_ms: 12
-
 # BLOCK - subsampling
 #####################
 TARGET_RATE: 200  # in Hz
 
-# BLOCK - img_roi_selection
+# BLOCK - roi_selection
 ###########################
 # Threshold below which the pixels are discarded (set to nan).
 # Given in percent of the range between minimum and maximum intensity.
@@ -101,8 +93,8 @@ CROP_TO_SELECTION: False
 
 # BLOCK - logMUA_estimation
 ########################
-MUA_HIGHPASS_FREQ: 50  # in Hz
-MUA_LOWPASS_FREQ: 1200  # in Hz
+MUA_HIGHPASS_FREQUENCY: 50  # in Hz
+MUA_LOWPASS_FREQUENCY: 1200  # in Hz
 # Rate of the logMUA signal. Must be <= the original sampling rate
 # in Hz (default: 'None', takes highpass_freq)
 logMUA_RATE: 70
